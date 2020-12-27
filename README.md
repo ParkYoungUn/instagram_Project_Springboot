@@ -34,7 +34,7 @@
 	* 새 비밀번호 일치 여부에 따라 유효하지 않으면 불일치 문구 출력
 	* 새 비밀번호 불일치 시 알림창 생성
 
-## Feed()
+## Feed(메인 페이지)
 ![image54](https://user-images.githubusercontent.com/50615738/103172330-0f110500-4896-11eb-844e-e5153d8dda04.png)
 ![image56](https://user-images.githubusercontent.com/50615738/103172338-1a643080-4896-11eb-95fe-d46cc32f0be3.png)
 #### Feed
@@ -81,72 +81,10 @@
 ![image71](https://user-images.githubusercontent.com/50615738/103172712-b42cdd00-4898-11eb-90c5-1809a4b1597e.png)
 * 최근 내역 5개를 보여줌
 
-## Direct-Message()
+## Direct-Message(채팅)
 ![image72](https://user-images.githubusercontent.com/50615738/103172739-de7e9a80-4898-11eb-840c-0540752510fe.png)
 #### Direct-Message
 * Left Section
 	* 전체 유저 목록 및 유저 검색 목록 (클릭하여 채팅할 유저를 선택)
 * Right Section
 	* 선택된 유저와의 채팅 기록 및 채팅 
-
-
-## MySQL 세팅
-
-1. MySQL 한글 설정 (my.ini)
-
-```ini
-[client]
-default-character-set=utf8
-
-[mysql]
-default-character-set=utf8
-
-[mysqld]
-collation-server = utf8_unicode_ci
-init-connect='SET NAMES utf8'
-init_connect='SET collation_connection = utf8_general_ci'
-character-set-server=utf8
-```
-
-2. MySQL 데이터베이스 및 사용자 생성
-
-- create user 'insta'@'%' identified by 'bitc5600';
-- GRANT ALL PRIVILEGES ON 별.별 TO 'insta'@'%';
-- create database insta;
-- use insta;
-
-
-## 맞팔 쿼리, 좋아요 카운트 쿼리
-
-1. 좋아요 수 쿼리 (스칼라 서브쿼리)<br/>
-![blog](https://postfiles.pstatic.net/MjAyMDA4MjRfMTYw/MDAxNTk4MjM5NzUwMjMy.VZH7JMI_P8AwMhJCSXxHfFSQq8uaJ7w6ufEjsvlae44g.mJoyoc69PAY-kHK5jeQW2JtrpOUA6i_qQFGcpqeHNNAg.PNG.getinthere/Screenshot_49.png?type=w773)
-
-```sql
-select
-i.id,
-i.caption,
-(select count(*) from likes l where l.imageId = i.id) as 좋아요
-from image i;
-```
-
-2. 맞팔 유무 쿼리 (Left outer Join 과 스칼라 서브쿼리)<br/>
-![blog](https://postfiles.pstatic.net/MjAyMDA4MjRfMjAy/MDAxNTk4MjM3ODE4MjUw.pDKhnS9IE1usJqVXVVo9iNJOo5FPbC7YDOLBP4IwCQIg.3tTT-qYv5b27K9AMP-dZP1YauCvD-7MJLm_j6FvIvJkg.PNG.getinthere/Screenshot_48.png?type=w773)
-
-```sql
-select f1.id, f1.fromUserId, f1.toUserId, f1.createDate,
-if(f2.fromUserId is null, false, true) "matpal"
-from follow f1 left outer join follow f2
-on f1.fromUserId = f2.toUserId and f1.toUserId = f2.fromUserId
-order by f1.id;
-
-
-select f1.id, f1.fromUserId, f1.toUserId,
-f1.createDate,
-(
-select 1 from follow f2
-where f1.fromUserId = f2.toUserId
-and f1.toUserId = f2.fromUserId
-) "matpal"
-from follow f1;
-```
-
