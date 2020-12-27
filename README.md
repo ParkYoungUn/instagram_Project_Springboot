@@ -1,17 +1,9 @@
-# 스프링부트 JPA, MySQL, Security 인스타그램
+# SpringBoot를 활용한 instagram clone project
 ------------------------------------------------------------
-### -Heroku Demo
-(heroku 서버는 시스템권한 설정 불가로 인해 영어만 입력 가능하며, 업로드된 이미지는 일정 시간 후 삭제됩니다.)
-https://instagramweb.herokuapp.com/
-
-<img src="https://user-images.githubusercontent.com/55027765/101129823-b1e2b480-3645-11eb-95a3-84ed96792e91.png" width="100%">
-
 
 ## DB & 사용기술
-![image](https://user-images.githubusercontent.com/55027765/101130369-b2c81600-3646-11eb-908a-574f1a3c43c3.png)
-![image](https://user-images.githubusercontent.com/55027765/101130487-e86cff00-3646-11eb-8788-96dafd645e0d.png)
-
-
+![DB](https://user-images.githubusercontent.com/50615738/103171278-572c2980-488e-11eb-9ebc-9cdf7bf6930b.png)
+![skill](https://user-images.githubusercontent.com/50615738/103171459-ca826b00-488f-11eb-8a8a-3eb1b44fac8c.png)
 
 
 ## MySQL 세팅
