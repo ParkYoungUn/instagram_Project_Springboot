@@ -1,6 +1,11 @@
 # SpringBoot를 활용한 instagram clone project
 ------------------------------------------------------------
 
+### instagram clone Demo site
+* [인스타그램 클론코딩 데모 사이트 이동하기](http://insta.yi.or.kr)
+	* 사용자 이름: test
+	* 비밀번호: test
+
 ### project 개발 기간 및 인원
 * 개발기간
 	* 2020/09/26 ~ 2020/11/5
