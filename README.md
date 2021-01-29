@@ -3,8 +3,8 @@
 
 ### instagram clone Demo
 * [인스타그램 클론코딩 데모 사이트 이동하기](http://insta.yi.or.kr)
-	* 사용자 이름: test
-	* 비밀번호: test
+	* 사용자 이름: admin
+	* 비밀번호: admin
 	
 * [인스타그램 클론코딩 데모 영상보기](https://youtu.be/ptLInn3zmcI)
 
